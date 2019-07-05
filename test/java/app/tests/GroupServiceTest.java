@@ -62,20 +62,6 @@ public class GroupServiceTest {
 		assertEquals(2,grouprepository.getSize());
 	}
 
-//	@Test
-//	public void testAddGroupToGroup() {
-//		GroupService service=new GroupService();
-//		Group gr=new Group("g4",19);
-//		Group g=new Group("g5",3);
-//		
-//		grouprepository.addGroup(gr);
-//		grouprepository.addGroup(g);
-//		
-//		service.saveGroup(g.getName(), gr.getName());
-//		Group group=grouprepository.getGroupObject(g.getName());
-//		assertEquals(true,group.getJoinedGroups().contains(gr));
-//	}
-
 	
 	@Test
 	public void testGroupPresent2() {
@@ -100,4 +86,6 @@ public class GroupServiceTest {
 	
 }
 
+    
+    	
 }

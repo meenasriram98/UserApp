@@ -1,5 +1,6 @@
 package app.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -85,6 +86,7 @@ public class GroupService {
 		Group group=grouprepository.getGroupObject(groupName);
 		group.getUserMembers().add(userService.getUserObject(userName));
 		grouprepository.updateRepository(group);
+		System.out.println("user added");
 	}
 	
 	public void removeUserFromGroup()

@@ -7,29 +7,36 @@ import org.junit.*;
 
 import app.classes.User;
 import app.repositories.UserRepository;
+import app.services.UserService;
 
 public class UserServiceTest {
 	
 	UserRepository usersrepository=UserRepository.getInstance();
-	User user=new User("u1",1);
+	UserService service=new UserService();
+	
 	
 	@Test
 	public void testSaveUser() {
-		usersrepository.addUser(user);
+		service.saveUser("user1", 45);
 		assertEquals(1,usersrepository.getSize());
-		
 	}
-
 
 	@Test
 	public void testUserPresent() {
-		assertEquals(user.getName(),usersrepository.getUserObject("u1").getName());
+		assertTrue(service.userPresent("user1"));
 	}
 
+//	@Test
+//	public void testRemoveUser() {
+//		usersrepository.removeUser("user1");
+//		assertEquals(0,usersrepository.userData.size());
+//	}
+	
 	@Test
-	public void testRemoveUser() {
-		usersrepository.removeUser("u1");
-		assertEquals(0,usersrepository.userData.size());
+	public void testGetUserObject()
+	{
+		service.saveUser("user2", 56);
+		assertEquals("user2",service.getUserObject("user2").getName());
 	}
 
 }
