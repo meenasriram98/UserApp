@@ -33,25 +33,23 @@ public class GroupServiceTest {
 		assertTrue(groupService.groupPresent(gr.getName()));
 	}
 
-
 	@Test
 	public void testaddGroup() {
 		Group gr=new Group("g4",19);
 		Group g=new Group("g5",3);
 		grouprepository.addGroup(g);
 		grouprepository.addGroup(gr);
-		assertEquals(3,grouprepository.getSize());
+		assertEquals(4,grouprepository.getSize());
 	}
 	
 	@Test
 	public void testRemoveGroup() {
-		Group g=new Group("g5",3);
+		Group g=new Group("g6",3);
 		grouprepository.addGroup(g);
 		grouprepository.removeGroup(g.getName());
-		assertEquals(1,grouprepository.getSize());
+		assertEquals(2,grouprepository.getSize());
 	}
 
-	
 	public void testRemoveGroup1() {
 		Group g=new Group("g5",3);
 		grouprepository.addGroup(g);
@@ -62,14 +60,17 @@ public class GroupServiceTest {
 		assertEquals(2,grouprepository.getSize());
 	}
 
+<<<<<<< Updated upstream
 	
+=======
+>>>>>>> Stashed changes
 	@Test
 	public void testGroupPresent2() {
 		assertFalse(grouprepository.getGroup("meena"));
 	}
 
 @Test
-    public void removeGroupFromGroup()
+    public void testremoveGroupFromGroup()
 {
 	GroupService service=new GroupService();
 	Group gr=new Group("g6",19);
@@ -86,6 +87,10 @@ public class GroupServiceTest {
 	
 }
 
+<<<<<<< Updated upstream
     
+=======
+
+>>>>>>> Stashed changes
     	
 }
